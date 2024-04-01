@@ -86,9 +86,9 @@ async def chatgpt(message: types.Message):
 
     reference.response = response['choices'][0]['message']['content']
     print(f">>> chatGPT: \n\t{reference.response}") # output from chatGPT
-    await bot.send_message(chat_id=message.chat.id, text=reference.response)
     # for each execution it'll create different id's
+    await bot.send_message(chat_id=message.chat.id, text=reference.response)
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     executor.start_polling(dispatcher, skip_updates=True)
